@@ -1,123 +1,127 @@
 import React from 'react';
 import { PRICING_PLANS } from '../constants';
-import { Check, Crown, AlertTriangle, Clock } from 'lucide-react';
+import { Check, Crown, AlertTriangle, Clock, Zap, ShieldCheck } from 'lucide-react';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 
 export const Pricing: React.FC = () => {
     const { domRef, isVisible } = useScrollReveal();
 
   return (
-    <section id="pricing" className="py-32 bg-white relative overflow-hidden">
-      {/* Background Decor */}
-      <div className="absolute top-0 left-0 w-full h-1/2 bg-gray-50 -skew-y-3 transform origin-top-left -z-10"></div>
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="pricing" className="py-24 bg-gray-50 relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-20">
           <h2 className="text-primary font-bold tracking-wide uppercase text-sm mb-3">Investimento Inteligente</h2>
-          <h3 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6">
-            Escolha seu plano de crescimento
+          <h3 className="text-4xl md:text-5xl font-black text-gray-900 mb-6 tracking-tight">
+            Pague uma vez, <br/>lucre para sempre.
           </h3>
           <p className="text-gray-600 text-lg">
-            Cancele a qualquer momento. Sem contratos complicados. Apenas resultados.
+            Escolha o plano que melhor se adapta ao tamanho da sua produção. Sem letras miúdas.
           </p>
         </div>
 
         <div 
             ref={domRef}
-            className={`grid grid-cols-1 lg:grid-cols-3 gap-8 items-center reveal ${isVisible ? 'active' : ''}`}
+            className={`grid grid-cols-1 lg:grid-cols-3 gap-8 items-center max-w-6xl mx-auto reveal ${isVisible ? 'active' : ''}`}
         >
           {PRICING_PLANS.map((plan, index) => {
-             // Lógica de design diferenciado para o plano Vitalício (index 2)
-             const isLifetime = index === 2;
+             const isLifetime = index === 2; // O plano vitalício é o terceiro
              const isAnnual = index === 1;
 
              return (
                 <div 
                   key={plan.id} 
-                  className={`relative flex flex-col h-full rounded-3xl transition-all duration-300 ${
+                  className={`relative flex flex-col h-full rounded-[2rem] transition-all duration-300 ${
                     isLifetime 
-                      ? 'bg-gray-900 text-white shadow-2xl scale-105 border-2 border-secondary ring-4 ring-secondary/20 z-10' 
+                      ? 'bg-[#0f1115] text-white shadow-2xl shadow-black/20 scale-105 border border-yellow-500/30 z-10 overflow-hidden' 
                       : isAnnual 
-                        ? 'bg-white text-gray-900 shadow-xl border border-gray-200 lg:-mr-4 z-0 lg:py-10'
-                        : 'bg-white text-gray-900 shadow-lg border border-gray-100 lg:-mr-4 z-0 lg:scale-95'
+                        ? 'bg-white text-gray-900 shadow-xl border-2 border-primary/10 lg:py-10 z-0'
+                        : 'bg-white text-gray-900 shadow-lg border border-gray-100 lg:scale-95 z-0 opacity-80 hover:opacity-100'
                   }`}
                 >
+                  {/* Badge Exclusivo para Lifetime */}
                   {isLifetime && (
-                    <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
-                        <span className="bg-gradient-to-r from-secondary to-yellow-300 text-gray-900 font-black px-6 py-2 rounded-full text-sm shadow-lg flex items-center gap-2 uppercase tracking-wide">
-                            <Crown size={16} className="fill-black" />
-                            Oferta Exclusiva
-                        </span>
-                    </div>
+                    <>
+                        <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-yellow-600 via-yellow-300 to-yellow-600"></div>
+                        <div className="absolute -right-12 top-6 bg-yellow-400 text-black text-xs font-black px-12 py-1 rotate-45 shadow-sm uppercase tracking-widest z-20">
+                            92% OFF
+                        </div>
+                        <div className="absolute top-0 right-0 w-full h-full bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-yellow-500/10 via-transparent to-transparent pointer-events-none"></div>
+                    </>
                   )}
 
                   {isAnnual && !isLifetime && (
-                    <div className="absolute top-5 right-5">
-                         <span className="bg-green-100 text-green-700 text-xs font-bold px-3 py-1 rounded-full">Popular</span>
+                     <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-green-100 text-green-800 text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wide border border-green-200">
+                        Mais Popular
                     </div>
                   )}
                   
-                  <div className="p-8 pb-0">
-                    <h4 className={`text-xl font-bold mb-2 ${isLifetime ? 'text-secondary' : 'text-gray-500'}`}>{plan.name}</h4>
+                  <div className="p-8 pb-0 relative z-10">
+                    <div className="flex justify-between items-start mb-4">
+                        <h4 className={`text-lg font-bold ${isLifetime ? 'text-yellow-400' : 'text-gray-500 uppercase tracking-wider'}`}>{plan.name}</h4>
+                        {isLifetime && <Crown className="text-yellow-400 w-6 h-6 fill-yellow-400/20" />}
+                    </div>
                     
-                    {/* Anchoring */}
-                    {plan.originalPrice && (
-                        <div className={`text-sm line-through font-medium mb-1 ${isLifetime ? 'text-gray-500' : 'text-gray-400'}`}>
-                            De {plan.originalPrice}
+                    {/* Preço */}
+                    <div className="flex flex-col">
+                        {plan.originalPrice && (
+                            <span className={`text-sm line-through font-medium ${isLifetime ? 'text-gray-500' : 'text-gray-400'}`}>
+                                De {plan.originalPrice}
+                            </span>
+                        )}
+                        <div className="flex items-baseline gap-1">
+                            <span className={`text-4xl md:text-5xl font-black tracking-tight ${isLifetime ? 'text-white' : 'text-gray-900'}`}>
+                                {plan.price}
+                            </span>
                         </div>
-                    )}
-                    
-                    <div className="flex items-baseline gap-1">
-                      <span className={`text-5xl font-extrabold tracking-tight ${isLifetime ? 'text-white' : 'text-gray-900'}`}>{plan.price}</span>
-                      <span className={`text-sm font-medium ${isLifetime ? 'text-gray-400' : 'text-gray-500'}`}>{plan.period}</span>
+                        <span className={`text-xs font-medium mt-1 ${isLifetime ? 'text-gray-400' : 'text-gray-500'}`}>{plan.period}</span>
                     </div>
 
                     {plan.savings && (
-                        <div className={`mt-4 inline-block px-3 py-1 rounded-lg text-xs font-bold ${
+                        <div className={`mt-4 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold w-fit ${
                             isLifetime 
-                                ? 'bg-red-600/20 text-red-400 border border-red-500/30' 
+                                ? 'bg-yellow-400/10 text-yellow-400 border border-yellow-400/20' 
                                 : 'bg-green-100 text-green-700'
                         }`}>
+                            {isLifetime && <Zap size={12} fill="currentColor" />}
                             {plan.savings}
                         </div>
                     )}
                   </div>
 
-                  <div className="p-8 flex-1">
-                    <hr className={`border-t mb-8 ${isLifetime ? 'border-gray-800' : 'border-gray-100'}`} />
+                  <div className="p-8 flex-1 relative z-10">
+                    <hr className={`border-t mb-8 ${isLifetime ? 'border-white/10' : 'border-gray-100'}`} />
                     <ul className="space-y-4">
                       {plan.features.map((feature, idx) => (
                         <li key={idx} className="flex items-start gap-3">
-                          <div className={`mt-0.5 rounded-full p-0.5 ${isLifetime ? 'bg-secondary text-black' : 'bg-green-100 text-primary'}`}>
+                          <div className={`mt-0.5 rounded-full p-0.5 shrink-0 ${isLifetime ? 'bg-yellow-400 text-black' : 'bg-green-100 text-green-700'}`}>
                              <Check className="w-3 h-3 stroke-[3]" />
                           </div>
-                          <span className={`text-sm font-medium ${isLifetime ? 'text-gray-300' : 'text-gray-600'}`}>{feature}</span>
+                          <span className={`text-sm font-medium ${isLifetime ? 'text-gray-200' : 'text-gray-600'}`}>{feature}</span>
                         </li>
                       ))}
                     </ul>
                   </div>
 
-                  <div className="p-8 pt-0">
+                  <div className="p-8 pt-0 relative z-10">
                     <button 
-                        className={`w-full py-4 rounded-xl font-bold transition-all duration-200 uppercase tracking-wide flex items-center justify-center gap-2 ${
+                        className={`w-full py-4 rounded-xl font-bold transition-all duration-300 uppercase tracking-wide flex items-center justify-center gap-2 group ${
                         isLifetime 
-                            ? 'bg-gradient-to-r from-secondary to-yellow-400 hover:to-yellow-300 text-gray-900 shadow-lg shadow-yellow-500/20 transform hover:-translate-y-1' 
-                            : 'bg-primary hover:bg-green-700 text-white shadow-md'
+                            ? 'bg-gradient-to-r from-yellow-400 to-yellow-600 hover:to-yellow-300 text-black shadow-lg shadow-yellow-500/20 transform hover:-translate-y-1' 
+                            : 'bg-gray-900 hover:bg-primary text-white hover:shadow-lg'
                         }`}
                     >
                         {plan.ctaText}
+                        {isLifetime && <span className="group-hover:translate-x-1 transition-transform">→</span>}
                     </button>
                     
                     {isLifetime && (
-                        <div className="mt-4 flex items-center justify-center gap-2 text-xs text-gray-400">
+                        <div className="mt-4 flex items-center justify-center gap-2 text-xs text-gray-500 animate-pulse">
                              <Clock size={14} className="text-red-400" />
-                             <span className="text-red-400 font-bold">Poucas vagas restantes neste lote</span>
+                             <span className="text-red-400 font-bold">Oferta encerra em breve</span>
                         </div>
                     )}
                      {!isLifetime && (
-                        <div className="mt-4 text-center text-xs text-gray-400 h-4">
-                            
-                        </div>
+                         <p className="text-center text-xs text-gray-400 mt-4">7 dias grátis para testar</p>
                     )}
                   </div>
                 </div>
@@ -125,17 +129,18 @@ export const Pricing: React.FC = () => {
           })}
         </div>
         
-        <div className="mt-16 bg-blue-50 border border-blue-100 rounded-xl p-6 flex flex-col md:flex-row items-center justify-between max-w-4xl mx-auto text-center md:text-left">
-            <div className="flex items-center gap-4 mb-4 md:mb-0 justify-center">
-                <div className="p-3 bg-white rounded-full shadow-sm text-blue-600">
-                    <AlertTriangle />
-                </div>
-                <div>
-                    <h4 className="font-bold text-gray-900">Dúvida sobre qual escolher?</h4>
-                    <p className="text-sm text-gray-600">Fale com nosso especialista agronômico agora.</p>
-                </div>
+        {/* Support Strip */}
+        <div className="mt-20 border-t border-gray-200 pt-10 text-center">
+            <p className="text-gray-500 mb-4 flex items-center justify-center gap-2">
+                <ShieldCheck className="w-5 h-5 text-primary" />
+                <span>Pagamento 100% Seguro processado via Hotmart</span>
+            </p>
+            <div className="flex justify-center gap-4 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
+               {/* Placeholders for payment icons if needed, using text for now or SVGs */}
+               <img src="https://cdn-icons-png.flaticon.com/512/196/196578.png" alt="Visa" className="h-8" />
+               <img src="https://cdn-icons-png.flaticon.com/512/196/196566.png" alt="Mastercard" className="h-8" />
+               <img src="https://logopng.com.br/logos/pix-106.png" alt="Pix" className="h-8" />
             </div>
-            <a href="#" className="text-blue-600 font-bold hover:underline">Chamar no WhatsApp &rarr;</a>
         </div>
       </div>
     </section>

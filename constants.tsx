@@ -2,17 +2,16 @@ import { Sprout, DollarSign, Map, TrendingUp, ShieldCheck, Zap, Users, Lock, Sma
 import { Feature, PricingPlan, Testimonial, FAQItem } from './types';
 
 // ==================================================================================
-// ⚠️ ÁREA DE CONFIGURAÇÃO DA IMAGEM DO TONICO ⚠️
+// ⚠️ CONFIGURAÇÃO DA IMAGEM DO TONICO
 // ==================================================================================
 
-// Link Raw convertido automaticamente para garantir que a imagem carregue
+// Link direto para a imagem no seu GitHub. 
+// Certifique-se de que o repositório está PÚBLICO para que a imagem carregue.
 export const TONICO_AVATAR_URL = "https://raw.githubusercontent.com/esyprodutora/Maos-do-Campo---Landing-Page/main/assets-maos-do-campo/tonico256.png"; 
 
-// URL de reserva caso a imagem do GitHub não carregue (ex: repo privado)
-export const TONICO_FALLBACK_URL = "https://cdn-icons-png.flaticon.com/512/4712/4712109.png"; // Robô amigável genérico
+// Imagem de reserva (ícone neutro) caso o link do GitHub ainda não esteja no ar
+export const TONICO_FALLBACK_URL = "https://cdn-icons-png.flaticon.com/512/847/847969.png"; 
 
-// ==================================================================================
-// FIM DA CONFIGURAÇÃO
 // ==================================================================================
 
 export const FEATURES: Feature[] = [
@@ -25,7 +24,7 @@ export const FEATURES: Feature[] = [
   {
     id: 2,
     title: "Tonico: Seu Consultor de Campo",
-    description: "Tirou foto de uma folha manchada? O Tonico analisa e diz se é praga ou doença. Precisa saber a dosagem de NPK? Pergunte ao Tonico. Ele é sua IA especialista 24h.",
+    description: "Tirou foto de uma folha manchada? O Tonico analisa e diz se é praga ou doença. Precisa saber a dosagem de NPK? Pergunte ao Tonico. Ele é seu braço direito 24h.",
     icon: MessageCircle
   },
   {

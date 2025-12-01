@@ -8,7 +8,7 @@ import { Feature, PricingPlan, Testimonial, FAQItem } from './types';
 // 1. Suba sua foto no Google Drive.
 // 2. Clique com botão direito > Compartilhar > Qualquer pessoa com o link.
 // 3. Copie o link e cole abaixo, dentro das aspas.
-const SEU_LINK_AQUI = "https://cdn-icons-png.flaticon.com/512/847/847969.png"; 
+const SEU_LINK_AQUI = "https://drive.google.com/file/d/1CS7qNVAICc5gD5vkv4jIyP2N5TCrcymL/view?usp=drive_link"; 
 
 // Função Inteligente: Converte links do Google Drive para funcionarem no site
 const getSmartImageUrl = (url: string) => {

@@ -5,11 +5,10 @@ import { Feature, PricingPlan, Testimonial, FAQItem } from './types';
 // ⚠️ CONFIGURAÇÃO DA IMAGEM DO TONICO
 // ==================================================================================
 
-// Link direto para a imagem no seu GitHub. 
-// Certifique-se de que o repositório está PÚBLICO para que a imagem carregue.
-export const TONICO_AVATAR_URL = "https://raw.githubusercontent.com/esyprodutora/Maos-do-Campo---Landing-Page/main/assets-maos-do-campo/tonico256.png"; 
+// Link Raw do GitHub com parâmetro de versão (?v=1) para forçar atualização e evitar cache antigo.
+export const TONICO_AVATAR_URL = "https://raw.githubusercontent.com/esyprodutora/Maos-do-Campo---Landing-Page/main/assets-maos-do-campo/tonico256.png?v=1"; 
 
-// Imagem de reserva (ícone neutro) caso o link do GitHub ainda não esteja no ar
+// Imagem de reserva (ícone neutro de usuário) caso a imagem principal falhe
 export const TONICO_FALLBACK_URL = "https://cdn-icons-png.flaticon.com/512/847/847969.png"; 
 
 // ==================================================================================
@@ -23,8 +22,8 @@ export const FEATURES: Feature[] = [
   },
   {
     id: 2,
-    title: "Tonico: Seu Consultor de Campo",
-    description: "Tirou foto de uma folha manchada? O Tonico analisa e diz se é praga ou doença. Precisa saber a dosagem de NPK? Pergunte ao Tonico. Ele é seu braço direito 24h.",
+    title: "Tonico: Seu Braço Direito",
+    description: "Tirou foto de uma folha manchada? O Tonico analisa e diz se é praga ou doença. Precisa saber a dosagem de NPK? Pergunte ao Tonico. Ele é seu consultor de campo 24h.",
     icon: MessageCircle
   },
   {

@@ -15,6 +15,7 @@ export const Features: React.FC = () => {
                      src={TONICO_AVATAR_URL} 
                      alt="Tonico" 
                      className="w-full h-full object-cover" 
+                     referrerPolicy="no-referrer"
                    />
                 </div>
                 <span className="text-xs font-bold text-primary uppercase tracking-wider">Conheça o Tonico IA</span>

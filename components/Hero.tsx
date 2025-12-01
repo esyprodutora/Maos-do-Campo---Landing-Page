@@ -31,6 +31,7 @@ export const Hero: React.FC = () => {
                 src={TONICO_AVATAR_URL} 
                 alt="Avatar Tonico" 
                 className="w-full h-full object-cover" 
+                referrerPolicy="no-referrer"
               />
             </div>
             <span className="tracking-wide">Com Tonico: O Assistente Agro Inteligente</span>
@@ -67,6 +68,7 @@ export const Hero: React.FC = () => {
                   src={TONICO_AVATAR_URL} 
                   alt="Avatar Tonico" 
                   className="w-full h-full object-cover" 
+                  referrerPolicy="no-referrer"
                 />
               </div>
               <span className="text-lg">Conhecer o Tonico</span>
@@ -143,7 +145,8 @@ export const Hero: React.FC = () => {
                                 <img 
                                   src={TONICO_AVATAR_URL} 
                                   alt="Tonico AI" 
-                                  className="w-full h-full object-cover" 
+                                  className="w-full h-full object-cover"
+                                  referrerPolicy="no-referrer"
                                 />
                             </div>
                             <div>
@@ -191,6 +194,7 @@ export const Hero: React.FC = () => {
                           src={TONICO_AVATAR_URL} 
                           alt="Tonico" 
                           className="w-full h-full object-cover" 
+                          referrerPolicy="no-referrer"
                         />
                     </div>
                     <div>

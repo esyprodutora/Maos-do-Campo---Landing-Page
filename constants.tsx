@@ -8,13 +8,13 @@ import { Feature, PricingPlan, Testimonial, FAQItem } from './types';
 // 1. Suba sua foto no Google Drive.
 // 2. Clique com botão direito > Compartilhar > Qualquer pessoa com o link.
 // 3. Copie o link e cole abaixo, dentro das aspas.
-const SEU_LINK_AQUI = "https://drive.google.com/file/d/1CS7qNVAICc5gD5vkv4jIyP2N5TCrcymL/view?usp=drive_link"; 
+const SEU_LINK_AQUI = "https://drive.google.com/uc?export=view&id=1CS7qNVAICc5gD5vkv4jIyP2N5TCrcymL"; 
 
 // Função Inteligente: Converte links do Google Drive para funcionarem no site
 const getSmartImageUrl = (url: string) => {
     if (!url) return "";
     
-    // Tratamento para Google Drive
+    // Tratamento para Google Drive (Link de compartilhamento padrão)
     if (url.includes('drive.google.com') && url.includes('/file/d/')) {
         try {
             const id = url.split('/file/d/')[1].split('/')[0];

@@ -1,7 +1,7 @@
 import React from 'react';
 import { FEATURES } from '../constants';
 import { useScrollReveal } from '../hooks/useScrollReveal';
-import { ArrowRight, Leaf } from 'lucide-react';
+import { ArrowRight, Bot } from 'lucide-react';
 
 export const Features: React.FC = () => {
   return (
@@ -9,14 +9,14 @@ export const Features: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-20">
             <div className="inline-flex items-center gap-2 bg-green-50 px-3 py-1 rounded-full mb-4">
-                <Leaf className="w-4 h-4 text-primary" />
-                <span className="text-xs font-bold text-primary uppercase tracking-wider">Tecnologia de Ponta</span>
+                <Bot className="w-4 h-4 text-primary" />
+                <span className="text-xs font-bold text-primary uppercase tracking-wider">Conheça o Tonico IA</span>
             </div>
             <h2 className="text-3xl md:text-5xl font-black text-gray-900 mb-6 tracking-tight">
-                Controle total. <br/> <span className="text-primary">Do plantio à colheita.</span>
+                Tecnologia de Ponta, <br/> <span className="text-primary">Linguagem do Campo.</span>
             </h2>
             <p className="text-lg text-gray-600 leading-relaxed">
-                Transformamos dados complexos em decisões simples. Nossa plataforma foi desenhada para quem está no campo, não para quem está no escritório.
+                Juntamos a gestão completa da safra com o <strong>Tonico</strong>, seu braço direito na lavoura que entende de pragas, mercado e clima.
             </p>
         </div>
 
@@ -57,7 +57,7 @@ const FeatureCard: React.FC<{ feature: any, delay: number }> = ({ feature, delay
 
       <div className="relative z-10 mt-auto">
         <a href="#pricing" className="inline-flex items-center text-primary font-bold text-sm hover:gap-2 transition-all group-hover:text-green-700">
-            Ver na prática <ArrowRight size={16} className="ml-1" />
+            Falar com Tonico <ArrowRight size={16} className="ml-1" />
         </a>
       </div>
     </div>

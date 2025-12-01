@@ -1,10 +1,14 @@
 import React from 'react';
 import { ChevronRight, ShieldCheck, TrendingUp, Star, PlayCircle, MapPin, Sprout, Bot, MessageCircle } from 'lucide-react';
 import { useScrollReveal } from '../hooks/useScrollReveal';
-import { TONICO_AVATAR_URL } from '../constants';
+import { TONICO_AVATAR_URL, TONICO_FALLBACK_URL } from '../constants';
 
 export const Hero: React.FC = () => {
   const { domRef, isVisible } = useScrollReveal();
+
+  const handleImageError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
+    e.currentTarget.src = TONICO_FALLBACK_URL;
+  };
 
   return (
     <section className="relative min-h-[90vh] flex items-center pt-32 pb-20 overflow-hidden bg-gray-900">
@@ -26,8 +30,13 @@ export const Hero: React.FC = () => {
           
           <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-md text-secondary text-sm font-semibold animate-fade-in hover:bg-white/10 transition-colors cursor-default">
             {/* BADGE SUPERIOR AUMENTADO */}
-            <div className="w-8 h-8 rounded-full overflow-hidden border border-secondary/50 shadow-sm">
-              <img src={TONICO_AVATAR_URL} alt="Avatar Tonico" className="w-full h-full object-cover" />
+            <div className="w-8 h-8 rounded-full overflow-hidden border border-secondary/50 shadow-sm bg-gray-800">
+              <img 
+                src={TONICO_AVATAR_URL} 
+                alt="Avatar Tonico" 
+                className="w-full h-full object-cover" 
+                onError={handleImageError}
+              />
             </div>
             <span className="tracking-wide">Com Tonico: O Assistente Agro Inteligente</span>
           </div>
@@ -55,11 +64,16 @@ export const Hero: React.FC = () => {
             
             <button 
                onClick={() => document.getElementById('features')?.scrollIntoView({ behavior: 'smooth' })}
-               className="px-6 py-3 rounded-xl font-semibold text-white border border-white/20 hover:bg-white/10 transition-all flex items-center justify-center gap-3 backdrop-blur-sm hover:border-white/40"
+               className="px-6 py-3 rounded-xl font-semibold text-white border border-white/20 hover:bg-white/10 transition-all flex items-center justify-center gap-3 backdrop-blur-sm hover:border-white/40 group"
             >
-              {/* BOTÃO CONHECER TONICO AUMENTADO */}
-              <div className="w-11 h-11 rounded-full overflow-hidden border-2 border-white/30 shadow-md bg-white/10">
-                <img src={TONICO_AVATAR_URL} alt="Avatar Tonico" className="w-full h-full object-cover" />
+              {/* BOTÃO CONHECER TONICO AUMENTADO PARA w-14 */}
+              <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-white/30 shadow-md bg-white/10 transition-transform group-hover:scale-105">
+                <img 
+                  src={TONICO_AVATAR_URL} 
+                  alt="Avatar Tonico" 
+                  className="w-full h-full object-cover" 
+                  onError={handleImageError}
+                />
               </div>
               <span className="text-lg">Conhecer o Tonico</span>
             </button>
@@ -132,7 +146,12 @@ export const Hero: React.FC = () => {
                         <div className="flex items-center gap-4 mb-3">
                             {/* Avatar image container - CHAT INTERNO AUMENTADO */}
                             <div className="w-14 h-14 rounded-full bg-white flex items-center justify-center border-2 border-secondary shadow-sm overflow-hidden p-0.5 shrink-0">
-                                <img src={TONICO_AVATAR_URL} alt="Tonico AI" className="w-full h-full object-cover" />
+                                <img 
+                                  src={TONICO_AVATAR_URL} 
+                                  alt="Tonico AI" 
+                                  className="w-full h-full object-cover" 
+                                  onError={handleImageError}
+                                />
                             </div>
                             <div>
                                 <p className="text-base font-bold text-secondary flex items-center gap-1">Tonico <span className="text-[10px] bg-white/10 px-1.5 rounded text-gray-300 font-normal">IA</span></p>
@@ -175,7 +194,12 @@ export const Hero: React.FC = () => {
                 <div className="flex items-center gap-4">
                     {/* CARD FLUTUANTE AUMENTADO */}
                     <div className="bg-secondary p-0.5 rounded-full overflow-hidden w-16 h-16 border-2 border-white shadow-sm shrink-0">
-                        <img src={TONICO_AVATAR_URL} alt="Tonico" className="w-full h-full object-cover" />
+                        <img 
+                          src={TONICO_AVATAR_URL} 
+                          alt="Tonico" 
+                          className="w-full h-full object-cover" 
+                          onError={handleImageError}
+                        />
                     </div>
                     <div>
                         <p className="text-xs text-gray-500 font-bold uppercase">Assistente Tonico</p>

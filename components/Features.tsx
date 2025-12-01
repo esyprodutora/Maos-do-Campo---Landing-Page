@@ -1,17 +1,26 @@
 import React from 'react';
-import { FEATURES, TONICO_AVATAR_URL } from '../constants';
+import { FEATURES, TONICO_AVATAR_URL, TONICO_FALLBACK_URL } from '../constants';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 import { ArrowRight } from 'lucide-react';
 
 export const Features: React.FC = () => {
+  const handleImageError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
+    e.currentTarget.src = TONICO_FALLBACK_URL;
+  };
+
   return (
     <section id="features" className="py-24 bg-gray-50/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-20">
             <div className="inline-flex items-center gap-3 bg-green-50 pr-4 pl-2 py-1.5 rounded-full mb-6 border border-green-100 shadow-sm">
                 {/* BADGE FEATURES AUMENTADO E COM IMAGEM */}
-                <div className="w-10 h-10 rounded-full overflow-hidden border border-secondary/50 shadow-sm">
-                   <img src={TONICO_AVATAR_URL} alt="Tonico" className="w-full h-full object-cover" />
+                <div className="w-10 h-10 rounded-full overflow-hidden border border-secondary/50 shadow-sm bg-white">
+                   <img 
+                     src={TONICO_AVATAR_URL} 
+                     alt="Tonico" 
+                     className="w-full h-full object-cover" 
+                     onError={handleImageError}
+                   />
                 </div>
                 <span className="text-xs font-bold text-primary uppercase tracking-wider">Conheça o Tonico IA</span>
             </div>

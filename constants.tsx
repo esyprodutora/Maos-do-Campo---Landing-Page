@@ -8,6 +8,9 @@ import { Feature, PricingPlan, Testimonial, FAQItem } from './types';
 // Link Raw convertido automaticamente para garantir que a imagem carregue
 export const TONICO_AVATAR_URL = "https://raw.githubusercontent.com/esyprodutora/Maos-do-Campo---Landing-Page/main/assets-maos-do-campo/tonico256.png"; 
 
+// URL de reserva caso a imagem do GitHub não carregue (ex: repo privado)
+export const TONICO_FALLBACK_URL = "https://cdn-icons-png.flaticon.com/512/4712/4712109.png"; // Robô amigável genérico
+
 // ==================================================================================
 // FIM DA CONFIGURAÇÃO
 // ==================================================================================

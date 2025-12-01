@@ -5,10 +5,10 @@ import { Feature, PricingPlan, Testimonial, FAQItem } from './types';
 // ⚠️ CONFIGURAÇÃO DA IMAGEM DO TONICO
 // ==================================================================================
 
-// Link Raw do GitHub com parâmetro de versão (?v=1) para forçar atualização e evitar cache antigo.
-export const TONICO_AVATAR_URL = "https://raw.githubusercontent.com/esyprodutora/Maos-do-Campo---Landing-Page/main/assets-maos-do-campo/tonico256.png?v=1"; 
+// Arquivo local (Opção 1) - Busca a imagem direto na pasta public do projeto
+export const TONICO_AVATAR_URL = "/tonico256.png"; 
 
-// Imagem de reserva (ícone neutro de usuário) caso a imagem principal falhe
+// Imagem de reserva (caso o arquivo local não seja encontrado por algum motivo)
 export const TONICO_FALLBACK_URL = "https://cdn-icons-png.flaticon.com/512/847/847969.png"; 
 
 // ==================================================================================

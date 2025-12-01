@@ -1,29 +1,40 @@
-import { Sprout, DollarSign, Map, TrendingUp, ShieldCheck, Zap, Users, Lock, Smartphone, Leaf } from 'lucide-react';
+import { Sprout, DollarSign, Map, TrendingUp, ShieldCheck, Zap, Users, Lock, Smartphone, Leaf, BrainCircuit, Tractor, Layers, Droplets, Wheat, MessageCircle } from 'lucide-react';
 import { Feature, PricingPlan, Testimonial, FAQItem } from './types';
+
+// ==================================================================================
+// ⚠️ ÁREA DE CONFIGURAÇÃO DA IMAGEM DO TONICO ⚠️
+// ==================================================================================
+
+// Link Raw convertido automaticamente para garantir que a imagem carregue
+export const TONICO_AVATAR_URL = "https://raw.githubusercontent.com/esyprodutora/Maos-do-Campo---Landing-Page/main/assets-maos-do-campo/tonico256.png"; 
+
+// ==================================================================================
+// FIM DA CONFIGURAÇÃO
+// ==================================================================================
 
 export const FEATURES: Feature[] = [
   {
     id: 1,
-    title: "Economia de Insumos",
-    description: "Nossa IA cruza dados de solo e clima para recomendar a dose exata. Produtores relatam economia de até 25% em defensivos na 1ª safra.",
-    icon: Sprout
-  },
-  {
-    id: 2,
-    title: "Raio-X Financeiro",
-    description: "Chega de contas de padaria. Saiba exatamente seu Custo por Hectare e Margem Líquida em tempo real, na palma da mão.",
-    icon: DollarSign
-  },
-  {
-    id: 3,
-    title: "Vigilância Satelital",
-    description: "Monitore o vigor da vegetação (NDVI) sem pisar no talhão. Identifique pragas e falhas de plantio antes que virem prejuízo.",
+    title: "Mapeamento via Satélite",
+    description: "Abra o mapa, desenhe seus talhões com o dedo e tenha a área exata calculada. O Tonico já salva a localização para monitorar o clima daquele ponto.",
     icon: Map
   },
   {
+    id: 2,
+    title: "Tonico: Seu Consultor de Campo",
+    description: "Tirou foto de uma folha manchada? O Tonico analisa e diz se é praga ou doença. Precisa saber a dosagem de NPK? Pergunte ao Tonico. Ele é sua IA especialista 24h.",
+    icon: MessageCircle
+  },
+  {
+    id: 3,
+    title: "10 Culturas Prontas",
+    description: "Soja, Milho, Café, Cana, Algodão, Arroz, Feijão, Trigo, Laranja e Mandioca. O sistema já sabe as etapas de cada uma, do plantio à colheita.",
+    icon: Wheat
+  },
+  {
     id: 4,
-    title: "Venda na Alta",
-    description: "Receba alertas de mercado da Soja e Café. Saiba a hora exata de travar seu preço e garanta o melhor lucro da região.",
+    title: "Ciclo Financeiro Real",
+    description: "Lance o custo da semente, do diesel e da mão de obra. O sistema cruza com a cotação do dia e te mostra: Você está tendo lucro ou pagando para trabalhar?",
     icon: TrendingUp
   }
 ];
@@ -31,58 +42,58 @@ export const FEATURES: Feature[] = [
 export const PRICING_PLANS: PricingPlan[] = [
   {
     id: 1,
-    name: "Mensal",
+    name: "Safra Mensal",
     price: "R$ 29,90",
     originalPrice: "R$ 49,90",
     period: "/mês",
-    features: ["Até 200 Hectares", "Controle Financeiro Básico", "Suporte via Email", "Cancele quando quiser"],
-    ctaText: "Começar Mensal",
+    features: ["Até 200 Hectares", "Mapeamento Google Maps", "Cotações em Tempo Real", "Tira-dúvidas com o Tonico (Básico)"],
+    ctaText: "Testar Mensal",
     isPopular: false
   },
   {
     id: 2,
-    name: "Anual Pro",
-    price: "R$ 19,90",
-    originalPrice: "R$ 358,80",
-    savings: "Economize 33%",
-    period: "/mês (Cobrado anualmente)",
-    features: ["Hectares Ilimitados", "IA de Recomendação", "Relatórios Bancários", "Suporte Prioritário"],
-    ctaText: "Escolher Anual",
+    name: "Safra Semestral",
+    price: "R$ 97,00",
+    originalPrice: "R$ 179,40",
+    savings: "Economia de 46%",
+    period: "/semestre (Cobre uma safra inteira)",
+    features: ["Hectares Ilimitados", "Todas as 10 Culturas", "Tonico IA Ilimitado (Identifica Pragas)", "Previsão de Lucro Real"],
+    ctaText: "Garantir Semestral",
     isPopular: true
   },
   {
     id: 3,
-    name: "MEMBRO FUNDADOR",
+    name: "MEMBRO VITALÍCIO",
     price: "R$ 247,00",
     originalPrice: "R$ 2.997,00",
-    savings: "R$ 2.750 DE DESCONTO",
+    savings: "OFERTA ÚNICA: R$ 2.750 OFF",
     period: "/PAGAMENTO ÚNICO",
-    features: ["ACESSO VITALÍCIO (Eterno)", "Sem mensalidades nunca mais", "Consultoria Inicial Grátis", "Grupo VIP de Produtores", "Todas as atualizações futuras"],
-    ctaText: "GARANTIR ACESSO ETERNO",
-    isPopular: false // Custom styling handles distinct look
+    features: ["Acesso Vitalício ao Sistema", "Sem mensalidades nunca mais", "Tonico IA Vitalício", "Todas as atualizações futuras", "Grupo VIP de Produtores"],
+    ctaText: "QUERO ACESSO VITALÍCIO",
+    isPopular: false 
   }
 ];
 
 export const TESTIMONIALS: Testimonial[] = [
   {
     id: 1,
-    name: "João V. Medeiros",
-    role: "Soja 1.800 Ha - Sorriso/MT",
-    content: "Eu perdia dinheiro sem saber. Só no ajuste de adubação que o app sugeriu, paguei o plano vitalício umas 50 vezes. É indispensável.",
+    name: "João Bertolini",
+    role: "Produtor de Soja - MT",
+    content: "Mandei a foto de uma lagarta pro Tonico e ele identificou na hora que era a Helicoverpa. Me recomendou o princípio ativo certo e salvou meu talhão 3. Impressionante.",
     avatar: "https://images.unsplash.com/photo-1542909168-82c3e7fdca5c?auto=format&fit=crop&q=80&w=100&h=100"
   },
   {
     id: 2,
-    name: "Ana Clara Souza",
-    role: "Café Especial - Sul de Minas",
-    content: "Simples e direto. Meu pai tem 68 anos e usa no tablet sozinho. A previsão de custos bateu centavo por centavo com o real.",
+    name: "Ricardo Mendes",
+    role: "Cafeicultor - MG",
+    content: "Eu não tenho paciência pra computador. Mas conversar com o Tonico é igual conversar no Zap. Pergunto 'tá chovendo no talhão de baixo?' e ele me mostra o radar.",
     avatar: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=100&h=100"
   },
   {
     id: 3,
-    name: "Ricardo Mendes",
-    role: "Consultor Agronômico",
-    content: "Indico para todos meus clientes. A função de satélite me economiza dias de visita técnica. Ferramenta de precisão absoluta.",
+    name: "Eng. Pedro Siqueira",
+    role: "Consultor Agrícola",
+    content: "O sistema financeiro é ótimo, mas a IA do Tonico é o diferencial. Meus clientes usam para tirar dúvidas rápidas de dosagem quando eu não estou na fazenda.",
     avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=100&h=100"
   }
 ];
@@ -90,22 +101,22 @@ export const TESTIMONIALS: Testimonial[] = [
 export const FAQS: FAQItem[] = [
   {
     id: 1,
-    question: "O acesso vitalício é realmente para sempre?",
-    answer: "Sim! Ao adquirir o plano Membro Fundador, você paga uma única vez e o software é seu para sempre. Sem renovações, sem taxas ocultas e sem mensalidades. Inclui todas as melhorias futuras."
+    question: "Quem é o Tonico?",
+    answer: "O Tonico é nossa Inteligência Artificial especializada em agronegócio. Ele foi treinado com milhares de manuais técnicos, bulas de defensivos e dados climáticos. É como ter um agrônomo no bolso 24h."
   },
   {
     id: 2,
-    question: "Preciso de internet no campo?",
-    answer: "Não para lançar dados. O aplicativo funciona 'Offline-First'. Você registra tudo no talhão e ele sincroniza automaticamente quando o celular encontrar sinal Wi-Fi ou 4G."
+    question: "O Tonico identifica pragas por foto?",
+    answer: "Sim! No plano Semestral e Vitalício, você aponta a câmera para a folha doente ou para o inseto, e o Tonico analisa a imagem, diz o que é e sugere o tratamento."
   },
   {
     id: 3,
-    question: "E se eu não gostar?",
-    answer: "Risco zero. Oferecemos uma garantia incondicional de 30 dias. Use na sua safra, teste tudo. Se não achar que valeu a pena, devolvemos 100% do seu dinheiro via Pix na hora."
+    question: "Serve para quais culturas?",
+    answer: "O sistema vem pronto para: Soja, Milho, Café, Cana, Algodão, Arroz, Feijão, Trigo, Laranja e Mandioca. O Tonico também sabe tirar dúvidas sobre pastagem e hortifruti."
   },
   {
     id: 4,
-    question: "Serve para pequenas propriedades?",
-    answer: "Perfeitamente. O Mãos do Campo foi desenhado para escalar. Temos clientes com 5 hectares de hortifruti e clientes com 10.000 hectares de soja. A gestão financeira é vital para ambos."
+    question: "Precisa de internet na lavoura?",
+    answer: "Para lançar despesas, não. Para conversar com o Tonico e enviar fotos para análise, você precisa de conexão (3G/4G ou Wi-Fi), pois ele consulta nosso banco de dados em tempo real."
   }
 ];

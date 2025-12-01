@@ -14,9 +14,9 @@ export const SocialProof: React.FC = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-20">
-          <h2 className="text-3xl md:text-5xl font-extrabold mb-6 tracking-tight">Quem planta com dados,<br/> <span className="text-primary">colhe resultados.</span></h2>
+          <h2 className="text-3xl md:text-5xl font-extrabold mb-6 tracking-tight">O que diz quem já <br/> <span className="text-primary">plantou e colheu usando o app.</span></h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            Não acredite apenas na nossa palavra. Veja o que produtores de todo o Brasil estão falando.
+            Não é conversa. São produtores rurais que pararam de perder dinheiro em detalhes simples.
           </p>
         </div>
 
@@ -49,10 +49,10 @@ export const SocialProof: React.FC = () => {
         </div>
 
         <div className="mt-24 grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-x divide-white/10">
-            <Stat number="10k+" label="Produtores Ativos" />
-            <Stat number="5mi" label="Hectares Geridos" />
-            <Stat number="R$ 2Bi" label="Custos Otimizados" />
-            <Stat number="4.9" label="Nota na App Store" />
+            <Stat number="+10 Mil" label="Produtores Ativos" />
+            <Stat number="10" label="Culturas Disponíveis" />
+            <Stat number="+20%" label="Lucro Real (Média)" />
+            <Stat number="4.9" label="Nota na Loja" />
         </div>
       </div>
     </section>

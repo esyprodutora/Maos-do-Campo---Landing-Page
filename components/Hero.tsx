@@ -1,6 +1,7 @@
 import React from 'react';
-import { ChevronRight, ShieldCheck, TrendingUp, Star, PlayCircle } from 'lucide-react';
+import { ChevronRight, ShieldCheck, TrendingUp, Star, PlayCircle, MapPin, Sprout, Bot, MessageCircle } from 'lucide-react';
 import { useScrollReveal } from '../hooks/useScrollReveal';
+import { TONICO_AVATAR_URL } from '../constants';
 
 export const Hero: React.FC = () => {
   const { domRef, isVisible } = useScrollReveal();
@@ -23,20 +24,23 @@ export const Hero: React.FC = () => {
         {/* Left Content */}
         <div className="w-full lg:w-1/2 text-white space-y-8 text-center lg:text-left">
           
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-md text-secondary text-sm font-semibold animate-fade-in hover:bg-white/10 transition-colors cursor-default">
-            <Star className="w-4 h-4 fill-secondary text-secondary" />
-            <span className="tracking-wide">Plataforma #1 em Gestão Rural</span>
+          <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-md text-secondary text-sm font-semibold animate-fade-in hover:bg-white/10 transition-colors cursor-default">
+            {/* BADGE SUPERIOR AUMENTADO */}
+            <div className="w-8 h-8 rounded-full overflow-hidden border border-secondary/50 shadow-sm">
+              <img src={TONICO_AVATAR_URL} alt="Avatar Tonico" className="w-full h-full object-cover" />
+            </div>
+            <span className="tracking-wide">Com Tonico: O Assistente Agro Inteligente</span>
           </div>
           
-          <h1 className="text-5xl lg:text-7xl font-black tracking-tight leading-[1.1]">
-            Sua Fazenda na <br/>
+          <h1 className="text-4xl md:text-5xl lg:text-7xl font-black tracking-tight leading-[1.1]">
+            Quem controla o Talhão, <br/>
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-green-400 to-emerald-300">
-              Palma da Mão.
+              Domina o Lucro.
             </span>
           </h1>
           
           <p className="text-lg text-gray-300 max-w-xl mx-auto lg:mx-0 leading-relaxed font-light">
-            O fim das planilhas complexas. Planeje sua safra, controle custos e preveja lucros com Inteligência Artificial em segundos.
+            Chega de anotar em caderno. Mapeie sua lavoura via satélite, controle custos de 10 culturas e deixe o <strong>Tonico (nossa IA)</strong> identificar pragas e te dar dicas de manejo em tempo real.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-2">
@@ -45,16 +49,19 @@ export const Hero: React.FC = () => {
                 className="group relative overflow-hidden bg-primary hover:bg-green-600 text-white text-lg px-8 py-4 rounded-xl font-bold transition-all shadow-[0_0_40px_-10px_rgba(39,174,96,0.5)] hover:shadow-[0_0_60px_-15px_rgba(39,174,96,0.6)] flex items-center justify-center gap-3 transform hover:-translate-y-1"
             >
               <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-shimmer"></div>
-              COMEÇAR AGORA
+              TESTAR NA MINHA LAVOURA
               <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </button>
             
             <button 
                onClick={() => document.getElementById('features')?.scrollIntoView({ behavior: 'smooth' })}
-               className="px-8 py-4 rounded-xl font-semibold text-white border border-white/20 hover:bg-white/10 transition-all flex items-center justify-center gap-2 backdrop-blur-sm hover:border-white/40"
+               className="px-6 py-3 rounded-xl font-semibold text-white border border-white/20 hover:bg-white/10 transition-all flex items-center justify-center gap-3 backdrop-blur-sm hover:border-white/40"
             >
-              <PlayCircle className="w-5 h-5" />
-              Ver Como Funciona
+              {/* BOTÃO CONHECER TONICO AUMENTADO */}
+              <div className="w-11 h-11 rounded-full overflow-hidden border-2 border-white/30 shadow-md bg-white/10">
+                <img src={TONICO_AVATAR_URL} alt="Avatar Tonico" className="w-full h-full object-cover" />
+              </div>
+              <span className="text-lg">Conhecer o Tonico</span>
             </button>
           </div>
 
@@ -65,12 +72,7 @@ export const Hero: React.FC = () => {
              </div>
              <div className="hidden sm:block w-1 h-1 bg-gray-600 rounded-full"></div>
              <div className="flex items-center gap-2">
-                 <div className="flex -space-x-2">
-                    {[1,2,3].map(i => (
-                        <div key={i} className="w-6 h-6 rounded-full bg-gray-700 border border-gray-800"></div>
-                    ))}
-                 </div>
-                 <span>+10.000 Produtores</span>
+                 <span>Gestão: Soja, Milho, Café e +</span>
              </div>
           </div>
         </div>
@@ -90,12 +92,14 @@ export const Hero: React.FC = () => {
               {/* Screen */}
               <div className="w-full h-full bg-gray-50 flex flex-col relative overflow-hidden">
                 {/* Status Bar */}
-                <div className="h-28 bg-gradient-to-br from-green-800 to-green-600 p-6 pt-12 text-white flex justify-between items-start rounded-b-[2rem] shadow-lg relative z-10">
+                <div className="h-28 bg-gradient-to-br from-green-900 to-green-700 p-6 pt-12 text-white flex justify-between items-start rounded-b-[2rem] shadow-lg relative z-10">
                     <div>
-                        <p className="text-xs text-green-100 font-medium">Boa tarde,</p>
-                        <p className="font-bold text-xl tracking-tight">Fazenda Esperança</p>
+                        <p className="text-xs text-green-200 font-medium">Talhão 04 - Sede</p>
+                        <p className="font-bold text-xl tracking-tight flex items-center gap-2"><MapPin size={18}/> Soja Intacta</p>
                     </div>
-                    <div className="w-10 h-10 rounded-full bg-white/20 backdrop-blur border border-white/30 shadow-inner"></div>
+                    <div className="w-10 h-10 rounded-full bg-white/20 backdrop-blur border border-white/30 shadow-inner flex items-center justify-center">
+                        <Sprout size={20} />
+                    </div>
                 </div>
 
                 {/* Dashboard */}
@@ -105,69 +109,77 @@ export const Hero: React.FC = () => {
                     <div className="bg-white p-5 rounded-2xl shadow-xl shadow-gray-200/50 border border-gray-100 relative overflow-hidden">
                         <div className="flex justify-between items-start mb-2">
                             <div>
-                                <p className="text-xs text-gray-500 font-bold uppercase tracking-wider">Lucro Líquido</p>
-                                <p className="text-3xl font-black text-gray-900 mt-1">R$ 482k</p>
+                                <p className="text-xs text-gray-500 font-bold uppercase tracking-wider">Lucro Estimado</p>
+                                <p className="text-3xl font-black text-gray-900 mt-1">R$ 4.250<span className="text-sm text-gray-400 font-normal">/ha</span></p>
                             </div>
                             <div className="p-2 bg-green-50 rounded-lg">
                                 <TrendingUp className="text-primary w-6 h-6" />
                             </div>
                         </div>
-                        <div className="w-full bg-gray-100 h-1.5 rounded-full mt-2 overflow-hidden">
-                            <div className="bg-primary h-full rounded-full w-[75%]"></div>
+                        <div className="flex justify-between text-xs mt-4 border-t pt-3">
+                             <div className="w-full">
+                                <span className="text-gray-400 block mb-1">Cotação Atualizada</span>
+                                <div className="flex justify-between items-center w-full">
+                                    <span className="font-bold text-gray-700">Soja</span>
+                                    <span className="text-green-600 font-bold bg-green-50 px-2 py-0.5 rounded">R$ 132,00 ▲</span>
+                                </div>
+                            </div>
                         </div>
-                        <p className="text-xs text-gray-400 mt-2 font-medium">Meta da Safra: 75% atingida</p>
+                    </div>
+
+                    {/* Chat do Tonico (AI Feature Highlight) */}
+                    <div className="bg-gradient-to-br from-gray-900 to-gray-800 text-white p-4 rounded-xl shadow-lg border-l-4 border-secondary relative overflow-hidden group/chat">
+                        <div className="flex items-center gap-4 mb-3">
+                            {/* Avatar image container - CHAT INTERNO AUMENTADO */}
+                            <div className="w-14 h-14 rounded-full bg-white flex items-center justify-center border-2 border-secondary shadow-sm overflow-hidden p-0.5 shrink-0">
+                                <img src={TONICO_AVATAR_URL} alt="Tonico AI" className="w-full h-full object-cover" />
+                            </div>
+                            <div>
+                                <p className="text-base font-bold text-secondary flex items-center gap-1">Tonico <span className="text-[10px] bg-white/10 px-1.5 rounded text-gray-300 font-normal">IA</span></p>
+                                <p className="text-[10px] text-gray-400">Agora</p>
+                            </div>
+                        </div>
+                        <div className="bg-white/10 p-3 rounded-tr-xl rounded-br-xl rounded-bl-xl text-xs text-gray-200 leading-relaxed relative">
+                             <div className="absolute -left-1.5 top-0 w-3 h-3 bg-white/10 [clip-path:polygon(100%_0,0_0,100%_100%)]"></div>
+                             "Analisei a foto do Talhão 02. Identifiquei início de <strong>Ferrugem Asiática</strong>. Recomendo aplicação preventiva de fungicida nas próximas 24h devido à previsão de chuva."
+                        </div>
+                         {/* Typing indicator animation */}
+                        <div className="flex gap-1 mt-2 ml-16 opacity-50">
+                            <span className="w-1 h-1 bg-gray-400 rounded-full animate-bounce"></span>
+                            <span className="w-1 h-1 bg-gray-400 rounded-full animate-bounce delay-100"></span>
+                            <span className="w-1 h-1 bg-gray-400 rounded-full animate-bounce delay-200"></span>
+                        </div>
                     </div>
 
                     {/* Actions Grid */}
                     <div className="grid grid-cols-2 gap-3">
                         <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex flex-col items-center justify-center gap-2 hover:bg-gray-50 transition-colors cursor-pointer group/card">
                             <div className="w-10 h-10 bg-blue-50 text-blue-500 rounded-full flex items-center justify-center group-hover/card:scale-110 transition-transform">
-                                <ShieldCheck size={20} />
+                                <MapPin size={20} />
                             </div>
-                            <span className="text-xs font-bold text-gray-600">Manejo</span>
+                            <span className="text-xs font-bold text-gray-600">Mapa da Safra</span>
                         </div>
                          <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex flex-col items-center justify-center gap-2 hover:bg-gray-50 transition-colors cursor-pointer group/card">
                             <div className="w-10 h-10 bg-amber-50 text-amber-500 rounded-full flex items-center justify-center group-hover/card:scale-110 transition-transform">
-                                <TrendingUp size={20} />
+                                <Sprout size={20} />
                             </div>
-                            <span className="text-xs font-bold text-gray-600">Cotação</span>
+                            <span className="text-xs font-bold text-gray-600">Lançar Etapa</span>
                         </div>
-                    </div>
-
-                    {/* Notification */}
-                    <div className="bg-gray-900 text-white p-4 rounded-xl shadow-lg flex items-center gap-3 border-l-4 border-secondary">
-                        <div className="bg-white/10 p-2 rounded-full">
-                            <Star className="w-4 h-4 text-secondary fill-secondary" />
-                        </div>
-                        <div>
-                            <p className="text-sm font-bold">Oportunidade</p>
-                            <p className="text-xs text-gray-300">Soja subiu 2.4% hoje. Vender?</p>
-                        </div>
-                    </div>
-                    
-                    {/* Fake Chart */}
-                    <div className="bg-white p-4 rounded-xl border border-gray-100 shadow-sm opacity-80">
-                         <div className="flex gap-2 items-end h-20 justify-between px-2">
-                            <div className="w-8 bg-green-200 h-[40%] rounded-t-sm"></div>
-                            <div className="w-8 bg-green-300 h-[60%] rounded-t-sm"></div>
-                            <div className="w-8 bg-green-400 h-[30%] rounded-t-sm"></div>
-                            <div className="w-8 bg-primary h-[80%] rounded-t-sm"></div>
-                            <div className="w-8 bg-green-600 h-[50%] rounded-t-sm"></div>
-                         </div>
                     </div>
                 </div>
               </div>
             </div>
 
-            {/* Floating Card */}
-            <div className="absolute top-32 -left-12 bg-white/90 backdrop-blur p-4 rounded-2xl shadow-2xl border border-white/40 hidden md:block animate-float">
-                <div className="flex items-center gap-3">
-                    <div className="bg-green-100 p-2 rounded-lg">
-                        <TrendingUp className="text-green-700 w-5 h-5" />
+            {/* Floating Card Tonico */}
+            <div className="absolute bottom-32 -right-12 bg-white/95 backdrop-blur p-5 rounded-2xl shadow-2xl border border-secondary/20 hidden md:block animate-float">
+                <div className="flex items-center gap-4">
+                    {/* CARD FLUTUANTE AUMENTADO */}
+                    <div className="bg-secondary p-0.5 rounded-full overflow-hidden w-16 h-16 border-2 border-white shadow-sm shrink-0">
+                        <img src={TONICO_AVATAR_URL} alt="Tonico" className="w-full h-full object-cover" />
                     </div>
                     <div>
-                        <p className="text-xs text-gray-500 font-bold uppercase">Economia Gerada</p>
-                        <p className="text-lg font-black text-gray-900">+ R$ 22.400</p>
+                        <p className="text-xs text-gray-500 font-bold uppercase">Assistente Tonico</p>
+                        <p className="text-sm font-bold text-gray-900 leading-tight">"Pode aplicar o <br/> Adubo Foliar hoje?"</p>
                     </div>
                 </div>
             </div>

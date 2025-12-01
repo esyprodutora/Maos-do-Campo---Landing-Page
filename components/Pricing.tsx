@@ -10,12 +10,12 @@ export const Pricing: React.FC = () => {
     <section id="pricing" className="py-24 bg-gray-50 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-20">
-          <h2 className="text-primary font-bold tracking-wide uppercase text-sm mb-3">Investimento Inteligente</h2>
+          <h2 className="text-primary font-bold tracking-wide uppercase text-sm mb-3">Mais barato que um saco de adubo</h2>
           <h3 className="text-4xl md:text-5xl font-black text-gray-900 mb-6 tracking-tight">
-            Pague uma vez, <br/>lucre para sempre.
+            Custa menos que um erro <br/>de aplicação.
           </h3>
           <p className="text-gray-600 text-lg">
-            Escolha o plano que melhor se adapta ao tamanho da sua produção. Sem letras miúdas.
+            Um único hectare mal planejado dá mais prejuízo que o acesso vitalício. O Mãos do Campo se paga na primeira economia que você fizer.
           </p>
         </div>
 
@@ -43,7 +43,7 @@ export const Pricing: React.FC = () => {
                     <>
                         <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-yellow-600 via-yellow-300 to-yellow-600"></div>
                         <div className="absolute -right-12 top-6 bg-yellow-400 text-black text-xs font-black px-12 py-1 rotate-45 shadow-sm uppercase tracking-widest z-20">
-                            92% OFF
+                            ÚLTIMO LOTE
                         </div>
                         <div className="absolute top-0 right-0 w-full h-full bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-yellow-500/10 via-transparent to-transparent pointer-events-none"></div>
                     </>
@@ -51,7 +51,7 @@ export const Pricing: React.FC = () => {
 
                   {isAnnual && !isLifetime && (
                      <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-green-100 text-green-800 text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wide border border-green-200">
-                        Mais Popular
+                        O Mais Escolhido
                     </div>
                   )}
                   
@@ -117,11 +117,11 @@ export const Pricing: React.FC = () => {
                     {isLifetime && (
                         <div className="mt-4 flex items-center justify-center gap-2 text-xs text-gray-500 animate-pulse">
                              <Clock size={14} className="text-red-400" />
-                             <span className="text-red-400 font-bold">Oferta encerra em breve</span>
+                             <span className="text-red-400 font-bold">Vagas do lote acabando</span>
                         </div>
                     )}
                      {!isLifetime && (
-                         <p className="text-center text-xs text-gray-400 mt-4">7 dias grátis para testar</p>
+                         <p className="text-center text-xs text-gray-400 mt-4">Cancele quando quiser</p>
                     )}
                   </div>
                 </div>
@@ -133,10 +133,9 @@ export const Pricing: React.FC = () => {
         <div className="mt-20 border-t border-gray-200 pt-10 text-center">
             <p className="text-gray-500 mb-4 flex items-center justify-center gap-2">
                 <ShieldCheck className="w-5 h-5 text-primary" />
-                <span>Pagamento 100% Seguro processado via Hotmart</span>
+                <span>Pagamento 100% Seguro</span>
             </p>
             <div className="flex justify-center gap-4 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
-               {/* Placeholders for payment icons if needed, using text for now or SVGs */}
                <img src="https://cdn-icons-png.flaticon.com/512/196/196578.png" alt="Visa" className="h-8" />
                <img src="https://cdn-icons-png.flaticon.com/512/196/196566.png" alt="Mastercard" className="h-8" />
                <img src="https://logopng.com.br/logos/pix-106.png" alt="Pix" className="h-8" />

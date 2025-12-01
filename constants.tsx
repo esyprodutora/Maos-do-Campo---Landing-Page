@@ -2,14 +2,37 @@ import { Sprout, DollarSign, Map, TrendingUp, ShieldCheck, Zap, Users, Lock, Sma
 import { Feature, PricingPlan, Testimonial, FAQItem } from './types';
 
 // ==================================================================================
-// ⚠️ CONFIGURAÇÃO DA IMAGEM DO TONICO
+// ⚠️ CONFIGURAÇÃO DA IMAGEM DO TONICO (GOOGLE DRIVE / LINK DIRETO)
 // ==================================================================================
 
-// Arquivo local (Opção 1) - Busca a imagem direto na pasta public do projeto
-export const TONICO_AVATAR_URL = "/tonico256.png"; 
+// 1. Suba sua foto no Google Drive.
+// 2. Clique com botão direito > Compartilhar > Qualquer pessoa com o link.
+// 3. Copie o link e cole abaixo, dentro das aspas.
+const SEU_LINK_AQUI = "https://cdn-icons-png.flaticon.com/512/847/847969.png"; 
 
-// Imagem de reserva (caso o arquivo local não seja encontrado por algum motivo)
-export const TONICO_FALLBACK_URL = "https://cdn-icons-png.flaticon.com/512/847/847969.png"; 
+// Função Inteligente: Converte links do Google Drive para funcionarem no site
+const getSmartImageUrl = (url: string) => {
+    if (!url) return "";
+    
+    // Tratamento para Google Drive
+    if (url.includes('drive.google.com') && url.includes('/file/d/')) {
+        try {
+            const id = url.split('/file/d/')[1].split('/')[0];
+            return `https://drive.google.com/uc?export=view&id=${id}`;
+        } catch (e) {
+            return url;
+        }
+    }
+    
+    // Tratamento para Dropbox
+    if (url.includes('dropbox.com')) {
+        return url.replace('?dl=0', '?raw=1');
+    }
+
+    return url;
+};
+
+export const TONICO_AVATAR_URL = getSmartImageUrl(SEU_LINK_AQUI);
 
 // ==================================================================================
 

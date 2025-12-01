@@ -1,14 +1,10 @@
 import React from 'react';
 import { ChevronRight, ShieldCheck, TrendingUp, Star, PlayCircle, MapPin, Sprout, Bot, MessageCircle } from 'lucide-react';
 import { useScrollReveal } from '../hooks/useScrollReveal';
-import { TONICO_AVATAR_URL, TONICO_FALLBACK_URL } from '../constants';
+import { TONICO_AVATAR_URL } from '../constants';
 
 export const Hero: React.FC = () => {
   const { domRef, isVisible } = useScrollReveal();
-
-  const handleImageError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
-    e.currentTarget.src = TONICO_FALLBACK_URL;
-  };
 
   return (
     <section className="relative min-h-[90vh] flex items-center pt-32 pb-20 overflow-hidden bg-gray-900">
@@ -35,7 +31,6 @@ export const Hero: React.FC = () => {
                 src={TONICO_AVATAR_URL} 
                 alt="Avatar Tonico" 
                 className="w-full h-full object-cover" 
-                onError={handleImageError}
               />
             </div>
             <span className="tracking-wide">Com Tonico: O Assistente Agro Inteligente</span>
@@ -72,7 +67,6 @@ export const Hero: React.FC = () => {
                   src={TONICO_AVATAR_URL} 
                   alt="Avatar Tonico" 
                   className="w-full h-full object-cover" 
-                  onError={handleImageError}
                 />
               </div>
               <span className="text-lg">Conhecer o Tonico</span>
@@ -150,7 +144,6 @@ export const Hero: React.FC = () => {
                                   src={TONICO_AVATAR_URL} 
                                   alt="Tonico AI" 
                                   className="w-full h-full object-cover" 
-                                  onError={handleImageError}
                                 />
                             </div>
                             <div>
@@ -198,7 +191,6 @@ export const Hero: React.FC = () => {
                           src={TONICO_AVATAR_URL} 
                           alt="Tonico" 
                           className="w-full h-full object-cover" 
-                          onError={handleImageError}
                         />
                     </div>
                     <div>

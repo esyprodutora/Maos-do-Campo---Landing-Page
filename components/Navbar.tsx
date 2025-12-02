@@ -22,6 +22,9 @@ export const Navbar: React.FC = () => {
     }
   };
 
+  // Define cores do texto baseadas no estado de rolagem
+  const navTextColor = isScrolled ? 'text-gray-600 hover:text-primary' : 'text-gray-100 hover:text-white';
+
   return (
     <nav 
       className={`fixed w-full z-50 transition-all duration-300 ${
@@ -30,16 +33,17 @@ export const Navbar: React.FC = () => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
-          <Logo />
+          {/* Passa a prop isLight para o logo: Se NÃO estiver rolando (!isScrolled), é Light (texto branco) */}
+          <Logo isLight={!isScrolled} />
           
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
-            <button onClick={() => scrollToSection('features')} className="text-gray-600 hover:text-primary font-medium transition-colors">Funcionalidades</button>
-            <button onClick={() => scrollToSection('pricing')} className="text-gray-600 hover:text-primary font-medium transition-colors">Planos</button>
-            <button onClick={() => scrollToSection('testimonials')} className="text-gray-600 hover:text-primary font-medium transition-colors">Depoimentos</button>
+            <button onClick={() => scrollToSection('features')} className={`${navTextColor} font-medium transition-colors`}>Funcionalidades</button>
+            <button onClick={() => scrollToSection('pricing')} className={`${navTextColor} font-medium transition-colors`}>Planos</button>
+            <button onClick={() => scrollToSection('testimonials')} className={`${navTextColor} font-medium transition-colors`}>Depoimentos</button>
             <button 
               onClick={() => scrollToSection('pricing')}
-              className="bg-primary hover:bg-green-700 text-white px-5 py-2.5 rounded-full font-semibold transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
+              className="bg-primary hover:bg-green-600 text-white px-5 py-2.5 rounded-full font-semibold transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
             >
               Começar Agora
             </button>
@@ -47,8 +51,11 @@ export const Navbar: React.FC = () => {
 
           {/* Mobile Menu Button */}
           <div className="md:hidden">
-            <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="text-gray-700">
-              {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+            <button 
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} 
+              className={isScrolled ? 'text-gray-700' : 'text-white'}
+            >
+              {isMobileMenuOpen ? <X size={28} className="text-gray-700" /> : <Menu size={28} />}
             </button>
           </div>
         </div>

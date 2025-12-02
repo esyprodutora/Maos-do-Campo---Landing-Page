@@ -2,37 +2,11 @@ import { Sprout, DollarSign, Map, TrendingUp, ShieldCheck, Zap, Users, Lock, Sma
 import { Feature, PricingPlan, Testimonial, FAQItem } from './types';
 
 // ==================================================================================
-// ⚠️ CONFIGURAÇÃO DA IMAGEM DO TONICO (GOOGLE DRIVE / LINK DIRETO)
+// CONFIGURAÇÃO DA IMAGEM DO TONICO
 // ==================================================================================
 
-// 1. Suba sua foto no Google Drive.
-// 2. Clique com botão direito > Compartilhar > Qualquer pessoa com o link.
-// 3. Copie o link e cole abaixo, dentro das aspas.
-const SEU_LINK_AQUI = "https://github.com/esyprodutora/Maos-do-Campo---Landing-Page/blob/main/public/tonyk.png?raw=true"; 
-
-// Função Inteligente: Converte links do Google Drive para funcionarem no site
-const getSmartImageUrl = (url: string) => {
-    if (!url) return "";
-    
-    // Tratamento para Google Drive (Link de compartilhamento padrão)
-    if (url.includes('drive.google.com') && url.includes('/file/d/')) {
-        try {
-            const id = url.split('/file/d/')[1].split('/')[0];
-            return `https://drive.google.com/uc?export=view&id=${id}`;
-        } catch (e) {
-            return url;
-        }
-    }
-    
-    // Tratamento para Dropbox
-    if (url.includes('dropbox.com')) {
-        return url.replace('?dl=0', '?raw=1');
-    }
-
-    return url;
-};
-
-export const TONICO_AVATAR_URL = getSmartImageUrl(SEU_LINK_AQUI);
+// Como você colocou o arquivo 'tonyk.png' na pasta public, o caminho é apenas este:
+export const TONICO_AVATAR_URL = "https://github.com/esyprodutora/Maos-do-Campo---Landing-Page/blob/main/public/tonyk.png?raw=true";
 
 // ==================================================================================
 

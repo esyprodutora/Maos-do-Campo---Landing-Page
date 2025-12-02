@@ -25,13 +25,12 @@ export const Hero: React.FC = () => {
         <div className="w-full lg:w-1/2 text-white space-y-8 text-center lg:text-left">
           
           <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-md text-secondary text-sm font-semibold animate-fade-in hover:bg-white/10 transition-colors cursor-default">
-            {/* BADGE SUPERIOR AUMENTADO */}
+            {/* BADGE SUPERIOR COM IMAGEM */}
             <div className="w-8 h-8 rounded-full overflow-hidden border border-secondary/50 shadow-sm bg-gray-800">
               <img 
                 src={TONICO_AVATAR_URL} 
                 alt="Avatar Tonico" 
                 className="w-full h-full object-cover" 
-                referrerPolicy="no-referrer"
               />
             </div>
             <span className="tracking-wide">Com Tonico: O Assistente Agro Inteligente</span>
@@ -60,17 +59,9 @@ export const Hero: React.FC = () => {
             
             <button 
                onClick={() => document.getElementById('features')?.scrollIntoView({ behavior: 'smooth' })}
-               className="px-6 py-3 rounded-xl font-semibold text-white border border-white/20 hover:bg-white/10 transition-all flex items-center justify-center gap-3 backdrop-blur-sm hover:border-white/40 group"
+               className="px-8 py-4 rounded-xl font-semibold text-white border border-white/20 hover:bg-white/10 transition-all flex items-center justify-center gap-3 backdrop-blur-sm hover:border-white/40 group"
             >
-              {/* BOTÃO CONHECER TONICO AUMENTADO PARA w-14 */}
-              <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-white/30 shadow-md bg-white/10 transition-transform group-hover:scale-105">
-                <img 
-                  src={TONICO_AVATAR_URL} 
-                  alt="Avatar Tonico" 
-                  className="w-full h-full object-cover" 
-                  referrerPolicy="no-referrer"
-                />
-              </div>
+              {/* REMOVIDA A IMAGEM DESTE BOTÃO */}
               <span className="text-lg">Conhecer o Tonico</span>
             </button>
           </div>
@@ -140,13 +131,12 @@ export const Hero: React.FC = () => {
                     {/* Chat do Tonico (AI Feature Highlight) */}
                     <div className="bg-gradient-to-br from-gray-900 to-gray-800 text-white p-4 rounded-xl shadow-lg border-l-4 border-secondary relative overflow-hidden group/chat">
                         <div className="flex items-center gap-4 mb-3">
-                            {/* Avatar image container - CHAT INTERNO AUMENTADO */}
+                            {/* Avatar image container - CHAT INTERNO */}
                             <div className="w-14 h-14 rounded-full bg-white flex items-center justify-center border-2 border-secondary shadow-sm overflow-hidden p-0.5 shrink-0">
                                 <img 
                                   src={TONICO_AVATAR_URL} 
                                   alt="Tonico AI" 
                                   className="w-full h-full object-cover"
-                                  referrerPolicy="no-referrer"
                                 />
                             </div>
                             <div>
@@ -188,13 +178,12 @@ export const Hero: React.FC = () => {
             {/* Floating Card Tonico */}
             <div className="absolute bottom-32 -right-12 bg-white/95 backdrop-blur p-5 rounded-2xl shadow-2xl border border-secondary/20 hidden md:block animate-float">
                 <div className="flex items-center gap-4">
-                    {/* CARD FLUTUANTE AUMENTADO */}
+                    {/* CARD FLUTUANTE */}
                     <div className="bg-secondary p-0.5 rounded-full overflow-hidden w-16 h-16 border-2 border-white shadow-sm shrink-0">
                         <img 
                           src={TONICO_AVATAR_URL} 
                           alt="Tonico" 
                           className="w-full h-full object-cover" 
-                          referrerPolicy="no-referrer"
                         />
                     </div>
                     <div>

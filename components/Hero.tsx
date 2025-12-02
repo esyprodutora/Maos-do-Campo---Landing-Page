@@ -1,5 +1,5 @@
 import React from 'react';
-import { ChevronRight, ShieldCheck, TrendingUp, Star, PlayCircle, MapPin, Sprout, Bot, MessageCircle } from 'lucide-react';
+import { ChevronRight, ShieldCheck, TrendingUp, Star, PlayCircle, MapPin, Sprout, Bot, MessageCircle, CheckCircle2 } from 'lucide-react';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 import { TONICO_AVATAR_URL } from '../constants';
 
@@ -33,7 +33,7 @@ export const Hero: React.FC = () => {
                 className="w-full h-full object-cover" 
               />
             </div>
-            <span className="tracking-wide">Com Tonico: O Assistente Agro Inteligente</span>
+            <span className="tracking-wide">IA Exclusiva para o Produtor Rural</span>
           </div>
           
           <h1 className="text-4xl md:text-5xl lg:text-7xl font-black tracking-tight leading-[1.1]">
@@ -44,36 +44,40 @@ export const Hero: React.FC = () => {
           </h1>
           
           <p className="text-lg text-gray-300 max-w-xl mx-auto lg:mx-0 leading-relaxed font-light">
-            Chega de anotar em caderno. Mapeie sua lavoura via satélite, controle custos de 10 culturas e deixe o <strong>Tonico (nossa IA)</strong> identificar pragas e te dar dicas de manejo em tempo real.
+            Transforme seu celular na ferramenta mais lucrativa da fazenda. Elimine o "achismo", economize insumos e tenha um <strong>Agrônomo Digital 24h</strong> no seu bolso.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-2">
             <button 
                 onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })}
-                className="group relative overflow-hidden bg-primary hover:bg-green-600 text-white text-lg px-8 py-4 rounded-xl font-bold transition-all shadow-[0_0_40px_-10px_rgba(39,174,96,0.5)] hover:shadow-[0_0_60px_-15px_rgba(39,174,96,0.6)] flex items-center justify-center gap-3 transform hover:-translate-y-1"
+                className="group relative overflow-hidden bg-primary hover:bg-green-600 text-white text-lg px-8 py-5 rounded-xl font-black uppercase tracking-wide transition-all shadow-[0_0_40px_-10px_rgba(39,174,96,0.5)] hover:shadow-[0_0_60px_-15px_rgba(39,174,96,0.6)] flex items-center justify-center gap-3 transform hover:-translate-y-1"
             >
               <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-shimmer"></div>
-              TESTAR NA MINHA LAVOURA
-              <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              AUMENTAR MEU LUCRO
+              <ChevronRight className="w-6 h-6 group-hover:translate-x-1 transition-transform stroke-[3]" />
             </button>
             
             <button 
                onClick={() => document.getElementById('features')?.scrollIntoView({ behavior: 'smooth' })}
-               className="px-8 py-4 rounded-xl font-semibold text-white border border-white/20 hover:bg-white/10 transition-all flex items-center justify-center gap-3 backdrop-blur-sm hover:border-white/40 group"
+               className="px-8 py-5 rounded-xl font-semibold text-white border border-white/20 hover:bg-white/10 transition-all flex items-center justify-center gap-3 backdrop-blur-sm hover:border-white/40 group"
             >
-              {/* REMOVIDA A IMAGEM DESTE BOTÃO */}
-              <span className="text-lg">Conhecer o Tonico</span>
+              <span className="text-lg">Ver Funcionalidades</span>
             </button>
           </div>
 
-          <div className="pt-6 flex flex-col sm:flex-row items-center gap-6 justify-center lg:justify-start text-sm text-gray-400 opacity-90">
+          {/* Authority Bar / Social Proof Strip */}
+          <div className="pt-8 border-t border-white/10 flex flex-wrap items-center justify-center lg:justify-start gap-x-8 gap-y-4 text-sm text-gray-400">
+             <div className="flex items-center gap-2">
+                 <CheckCircle2 className="w-5 h-5 text-primary" />
+                 <span>+10.000 Hectares Geridos</span>
+             </div>
              <div className="flex items-center gap-2">
                  <ShieldCheck className="w-5 h-5 text-primary" />
-                 <span>30 Dias de Garantia</span>
+                 <span>Compra 100% Segura</span>
              </div>
-             <div className="hidden sm:block w-1 h-1 bg-gray-600 rounded-full"></div>
              <div className="flex items-center gap-2">
-                 <span>Gestão: Soja, Milho, Café e +</span>
+                 <Star className="w-5 h-5 text-secondary fill-secondary" />
+                 <span>Nota 4.9/5.0</span>
              </div>
           </div>
         </div>
@@ -119,9 +123,9 @@ export const Hero: React.FC = () => {
                         </div>
                         <div className="flex justify-between text-xs mt-4 border-t pt-3">
                              <div className="w-full">
-                                <span className="text-gray-400 block mb-1">Cotação Atualizada</span>
+                                <span className="text-gray-400 block mb-1">Cotação Hoje</span>
                                 <div className="flex justify-between items-center w-full">
-                                    <span className="font-bold text-gray-700">Soja</span>
+                                    <span className="font-bold text-gray-700">Soja (Saca 60kg)</span>
                                     <span className="text-green-600 font-bold bg-green-50 px-2 py-0.5 rounded">R$ 132,00 ▲</span>
                                 </div>
                             </div>
@@ -146,7 +150,7 @@ export const Hero: React.FC = () => {
                         </div>
                         <div className="bg-white/10 p-3 rounded-tr-xl rounded-br-xl rounded-bl-xl text-xs text-gray-200 leading-relaxed relative">
                              <div className="absolute -left-1.5 top-0 w-3 h-3 bg-white/10 [clip-path:polygon(100%_0,0_0,100%_100%)]"></div>
-                             "Analisei a foto do Talhão 02. Identifiquei início de <strong>Ferrugem Asiática</strong>. Recomendo aplicação preventiva de fungicida nas próximas 24h devido à previsão de chuva."
+                             "Analisei a foto do Talhão 02. Identifiquei início de <strong>Ferrugem Asiática</strong>. Recomendo aplicação preventiva de fungicida nas próximas 24h."
                         </div>
                          {/* Typing indicator animation */}
                         <div className="flex gap-1 mt-2 ml-16 opacity-50">
@@ -187,8 +191,8 @@ export const Hero: React.FC = () => {
                         />
                     </div>
                     <div>
-                        <p className="text-xs text-gray-500 font-bold uppercase">Assistente Tonico</p>
-                        <p className="text-sm font-bold text-gray-900 leading-tight">"Pode aplicar o <br/> Adubo Foliar hoje?"</p>
+                        <p className="text-xs text-gray-500 font-bold uppercase">Tonico Diz:</p>
+                        <p className="text-sm font-bold text-gray-900 leading-tight">"O preço do adubo <br/> baixou hoje!"</p>
                     </div>
                 </div>
             </div>

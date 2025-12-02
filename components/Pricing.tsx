@@ -1,6 +1,6 @@
 import React from 'react';
 import { PRICING_PLANS } from '../constants';
-import { Check, Crown, AlertTriangle, Clock, Zap, ShieldCheck } from 'lucide-react';
+import { Check, Crown, AlertTriangle, Clock, Zap, ShieldCheck, Lock } from 'lucide-react';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 
 export const Pricing: React.FC = () => {
@@ -10,12 +10,12 @@ export const Pricing: React.FC = () => {
     <section id="pricing" className="py-24 bg-gray-50 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-20">
-          <h2 className="text-primary font-bold tracking-wide uppercase text-sm mb-3">Mais barato que um saco de adubo</h2>
+          <h2 className="text-primary font-bold tracking-wide uppercase text-sm mb-3">Melhor Custo-Benefício do Mercado</h2>
           <h3 className="text-4xl md:text-5xl font-black text-gray-900 mb-6 tracking-tight">
-            Custa menos que um erro <br/>de aplicação.
+            Mais barato que 1 saca <br/>de adubo desperdiçado.
           </h3>
           <p className="text-gray-600 text-lg">
-            Um único hectare mal planejado dá mais prejuízo que o acesso vitalício. O Mãos do Campo se paga na primeira economia que você fizer.
+            Um único erro de aplicação na safra custa 10x mais que o plano vitalício. O Mãos do Campo não é um gasto, é o melhor seguro para o seu lucro.
           </p>
         </div>
 
@@ -43,7 +43,7 @@ export const Pricing: React.FC = () => {
                     <>
                         <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-yellow-600 via-yellow-300 to-yellow-600"></div>
                         <div className="absolute -right-12 top-6 bg-yellow-400 text-black text-xs font-black px-12 py-1 rotate-45 shadow-sm uppercase tracking-widest z-20">
-                            ÚLTIMO LOTE
+                            ESGOTANDO
                         </div>
                         <div className="absolute top-0 right-0 w-full h-full bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-yellow-500/10 via-transparent to-transparent pointer-events-none"></div>
                     </>
@@ -51,7 +51,7 @@ export const Pricing: React.FC = () => {
 
                   {isAnnual && !isLifetime && (
                      <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-green-100 text-green-800 text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wide border border-green-200">
-                        O Mais Escolhido
+                        Escolha Inteligente
                     </div>
                   )}
                   
@@ -117,11 +117,14 @@ export const Pricing: React.FC = () => {
                     {isLifetime && (
                         <div className="mt-4 flex items-center justify-center gap-2 text-xs text-gray-500 animate-pulse">
                              <Clock size={14} className="text-red-400" />
-                             <span className="text-red-400 font-bold">Vagas do lote acabando</span>
+                             <span className="text-red-400 font-bold">Vagas limitadas neste valor</span>
                         </div>
                     )}
                      {!isLifetime && (
-                         <p className="text-center text-xs text-gray-400 mt-4">Cancele quando quiser</p>
+                         <div className="mt-4 flex items-center justify-center gap-1.5 text-xs text-gray-400">
+                            <Lock size={12} />
+                            <span>Site Blindado e Seguro</span>
+                         </div>
                     )}
                   </div>
                 </div>
@@ -131,9 +134,9 @@ export const Pricing: React.FC = () => {
         
         {/* Support Strip */}
         <div className="mt-20 border-t border-gray-200 pt-10 text-center">
-            <p className="text-gray-500 mb-4 flex items-center justify-center gap-2">
+            <p className="text-gray-500 mb-4 flex items-center justify-center gap-2 font-medium">
                 <ShieldCheck className="w-5 h-5 text-primary" />
-                <span>Pagamento 100% Seguro</span>
+                <span>Garantia de 30 Dias ou Seu Dinheiro de Volta</span>
             </p>
             <div className="flex justify-center gap-4 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
                <img src="https://cdn-icons-png.flaticon.com/512/196/196578.png" alt="Visa" className="h-8" />

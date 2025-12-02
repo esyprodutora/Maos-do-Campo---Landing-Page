@@ -8,7 +8,7 @@ import { Feature, PricingPlan, Testimonial, FAQItem } from './types';
 // 1. Suba sua foto no Google Drive.
 // 2. Clique com botão direito > Compartilhar > Qualquer pessoa com o link.
 // 3. Copie o link e cole abaixo, dentro das aspas.
-const SEU_LINK_AQUI = "https://github.com/esyprodutora/Maos-do-Campo---Landing-Page/blob/main/public/tonyk.png"; 
+const SEU_LINK_AQUI = "https://github.com/esyprodutora/Maos-do-Campo---Landing-Page/blob/main/public/tonyk.png?raw=true"; 
 
 // Função Inteligente: Converte links do Google Drive para funcionarem no site
 const getSmartImageUrl = (url: string) => {
